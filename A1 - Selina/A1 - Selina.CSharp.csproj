@@ -67,5 +67,8 @@
     <Compile Include="Assets\Scripts\ResizeIt.cs" />
     <Compile Include="Assets\Scripts\RotateIt.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
