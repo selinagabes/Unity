@@ -5,19 +5,15 @@ using System;
 public class MoveIt : MonoBehaviour {
 
     // Use this for initialization
-  
-	void Start () {
-        //transform.position = new Vector3(transform.position.x-2, transform.position.y, transform.position.z);
-}
+    private Vector3 position1 = new Vector3(2, 1, 0);
+    private Vector3 position2 = new Vector3(-2, 1, 0);
+    public float speed = 1.0f;
+    void Start()
+    {
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if(Time.time> Time.deltaTime)
-            transform.position = new Vector3(PingPong(Time.time, 2, -2), transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(position2, position1, (Mathf.Sin(Time.time*speed) + 1f) / 2f);
 	}
-
-    public float PingPong(float t,  float maxLength, float minLength)
-    {
-        return -(Mathf.PingPong(t, maxLength - minLength) + minLength);
-    }
 }
